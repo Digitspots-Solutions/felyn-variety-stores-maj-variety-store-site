@@ -1,0 +1,42 @@
+{
+  "businessName": "Felyn Variety Stores | MAJ Variety Store",
+  "industry": "Fashion & Creative Design",
+  "tone": "warm, creative, and inviting",
+  "tagline": "Where Style Meets Creativity",
+  "sections": [
+    {
+      "id": "hero",
+      "name": "Hero",
+      "copy": "Welcome to Felyn Variety Stores | MAJ Variety Store - Your Premier Destination for Fashion & Creative Design in Osogbo. Discover unique styles, quality fabrics, and bespoke creative designs that express your personality. Located in the heart of Osogbo, we bring fashion dreams to life.",
+      "imagePrompt": "Vibrant Nigerian fashion boutique storefront with colorful fabrics, modern window displays featuring African print dresses and contemporary fashion pieces, warm golden hour lighting, shoppers browsing outside, Osogbo street scene, professional retail photography, high-end fashion aesthetic",
+      "layout": "centered"
+    },
+    {
+      "id": "about",
+      "name": "About Us",
+      "copy": "Felyn Variety Stores and MAJ Variety Store have been serving the fashion-forward community of Osogbo and Egbedore with exceptional style and creativity. We specialize in curating the finest selection of fashion items, from ready-to-wear pieces to custom creative designs. Our commitment is to help every customer discover their unique style while providing quality products and personalized service. Whether you're looking for everyday wear, special occasion outfits, or creative design solutions, our experienced team is here to bring your vision to life.",
+      "imagePrompt": "Interior of a well-organized Nigerian fashion store with neatly arranged clothing racks, colorful African fabrics on display, modern lighting, customers being assisted by friendly staff, warm and welcoming atmosphere, professional retail interior photography",
+      "layout": "split"
+    },
+    {
+      "id": "services",
+      "name": "Our Services",
+      "copy": "Fashion Retail: Explore our carefully curated collection of trendy clothing, accessories, and fashion essentials for men, women, and children. From contemporary styles to traditional attire, we stock the latest trends that suit the Nigerian fashion scene.\n\nCreative Design Services: Our talented design team specializes in bespoke fashion creation. Whether you need custom outfits for weddings, corporate events, or personal styling, we transform your ideas into stunning reality.\n\nFabric & Materials: Access premium quality fabrics including ankara, lace, chiffon, and exclusive designer materials. We source the finest textiles to ensure your creations stand out.\n\nPersonal Styling: Let our fashion experts help you discover looks that complement your style and personality. We offer one-on-one styling consultations to elevate your wardrobe.\n\nAlterations & Tailoring: Professional fitting and alteration services to ensure every piece fits perfectly.",
+      "imagePrompt": "Collage-style image showing Nigerian fashion designer working with fabrics, measuring tape and scissors, colorful ankara patterns, sewing machine in action, happy customers trying on clothes, fashion accessories displayed artistically, bright and creative workspace",
+      "layout": "grid"
+    },
+    {
+      "id": "contact",
+      "name": "Visit Us Today",
+      "copy": "Ready to upgrade your wardrobe or bring your creative design vision to life? Visit Felyn Variety Stores | MAJ Variety Store at our convenient Osogbo location. Our friendly team is ready to assist you with all your fashion needs.\n\nStore Location: 14 Aminu Sumonu Road, MDS Area, Osogbo, Osun State\nServing: Egbedore, Osogbo, and surrounding communities\n\nOpen for business and ready to serve you. Call or WhatsApp us today to inquire about our latest collections, book a styling consultation, or discuss your custom design project. We look forward to helping you look and feel your absolute best!",
+      "imagePrompt": "Professional Nigerian business contact scene with smartphone showing WhatsApp chat, elegant business cards, map pin showing Osogbo location, warm welcoming storefront with 'Open' sign, friendly customer service representative, modern and professional atmosphere",
+      "layout": "centered"
+    }
+  ],
+  "contact": {
+    "phone": "+234 703 227 7898",
+    "email": "info@felynvarietystores.com",
+    "address": "14 Aminu Sumonu Road, MDS Area, Osogbo, Osun State",
+    "whatsapp": "https://wa.me/2347032277898"
+  }
+}
