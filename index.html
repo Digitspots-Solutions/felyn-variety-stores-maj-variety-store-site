@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felyn Variety Stores | MAJ Variety Store - Fashion & Creative Design in Osogbo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #151117;
+            --color-accent: #612bdc;
+            --color-bg: #FAF8FC;
+            --color-text: #18141A;
+            --color-surface: #262228;
+            --color-secondary-accent: #c7a287;
+            --font-display: 'Work Sans', sans-serif;
+            --font-body: 'Karla', sans-serif;
+            --border-radius: 10px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(250, 248, 252, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: var(--color-text);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            right: -100%;
+            width: 300px;
+            height: calc(100vh - 70px);
+            background: var(--color-bg);
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 2rem;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu ul a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .mobile-menu ul a:hover {
+            color: var(--color-accent);
+        }
+
+        section {
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        section:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        section:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        section:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        section:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        section:nth-child(5) {
+            animation-delay: 0.4s;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-secondary-accent);
+            font-family: var(--font-display);
+            font-weight: 400;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--color-accent);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(97, 43, 220, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #7a3ef5;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(97, 43, 220, 0.4);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .about {
+            padding: 80px 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-primary);
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--color-text);
+        }
+
+        .services {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--color-primary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--color-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--color-accent);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(97, 43, 220, 0.15);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--color-text);
+        }
+
+        .contact {
+            padding: 80px 0;
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-primary);
+        }
+
+        .contact p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: var(--color-text);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: white;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            color: var(--color-accent);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            font-weight: 600;
+        }
+
+        .whatsapp-btn:hover {
+            background: #20bd5a;
+            color: white;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+
+        footer {
+            background: var(--color-surface);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about {
+                padding: 48px 0;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-text h2,
+            .services h2,
+            .contact h2 {
+                font-size: 2rem;
+            }
+
+            .services {
+                padding: 48px 0;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact {
+                padding: 48px 0;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+
+            .whatsapp-float svg {
+                width: 26px;
+                height: 26px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Felyn Variety Stores</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero">
+        <div class="hero-bg">
+            <img src="https://images.pexels.com/photos/31763620/pexels-photo-31763620.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Felyn Variety Stores">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Felyn Variety Stores | MAJ Variety Store</h1>
+            <p class="tagline">Where Style Meets Creativity</p>
+            <p>Welcome to Felyn Variety Stores | MAJ Variety Store - Your Premier Destination for Fashion & Creative Design in Osogbo. Discover unique styles, quality fabrics, and bespoke creative designs that express your personality. Located in the heart of Osogbo, we bring fashion dreams to life.</p>
+            <a href="#contact" class="cta-button">Get Started Today</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.pexels.com/photos/7761833/pexels-photo-7761833.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="About Felyn Variety Stores">
+                </div>
+                <div class="about-text">
+                    <h2>About Us</h2>
+                    <p>Felyn Variety Stores and MAJ Variety Store have been serving the fashion-forward community of Osogbo and Egbedore with exceptional style and creativity. We specialize in curating the finest selection of fashion items, from ready-to-wear pieces to custom creative designs. Our commitment is to help every customer discover their unique style while providing quality products and personalized service. Whether you're looking for everyday wear, special occasion outfits, or creative design solutions, our experienced team is here to bring your vision to life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Fashion Retail</h3>
+                    <p>Explore our carefully curated collection of trendy clothing, accessories, and fashion essentials for men, women, and children. From contemporary styles to traditional attire, we stock the latest trends that suit the Nigerian fashion scene.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Creative Design Services</h3>
+                    <p>Our talented design team specializes in bespoke fashion creation. Whether you need custom outfits for weddings, corporate events, or personal styling, we transform your ideas into stunning reality.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Fabric & Materials</h3>
+                    <p>Access premium quality fabrics including ankara, lace, chiffon, and exclusive designer materials. We source the finest textiles to ensure your creations stand out.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Personal Styling</h3>
+                    <p>Let our fashion experts help you discover looks that complement your style and personality. We offer one-on-one styling consultations to elevate your wardrobe.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Alterations & Tailoring</h3>
+                    <p>Professional fitting and alteration services to ensure every piece fits perfectly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Visit Us Today</h2>
+                <p>Ready to upgrade your wardrobe or bring your creative design vision to life? Visit Felyn Variety Stores | MAJ Variety Store at our convenient Osogbo location. Our friendly team is ready to assist you with all your fashion needs.</p>
+                <p><strong>Store Location:</strong> 14 Aminu Sumonu Road, MDS Area, Osogbo, Osun State<br>
+                <strong>Serving:</strong> Egbedore, Osogbo, and surrounding communities</p>
+                <p>Open for business and ready to serve you. Call or WhatsApp us today to inquire about our latest collections, book a styling consultation, or discuss your custom design project. We look forward to helping you look and feel your absolute best!</p>
+                <div class="contact-info">
+                    <a href="tel:+2347032277898" class="contact-item">📞 +234 703 227 7898</a>
+                    <a href="mailto:info@felynvarietystores.com" class="contact-item">✉️ info@felynvarietystores.com</a>
+                    <a href="https://wa.me/2347032277898" class="contact-item whatsapp-btn" target="_blank">💬 Chat on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/2347032277898" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.203 1.393 1.393-5.203-0.292-0.507c-1.224-2.162-1.87-4.588-1.87-7.07 0-7.444 6.056-13.5 13.5-13.5s13.5 6.056 13.5 13.5-6.008 13.549-13.451 13.549zM21.803 19.225c-0.365-0.183-2.159-1.065-2.494-1.187s-0.578-0.183-0.822 0.183c-0.244 0.366-0.944 1.187-1.158 1.432s-0.426 0.274-0.791 0.091c-0.365-0.183-1.542-0.569-2.936-1.813-1.085-0.968-1.818-2.164-2.032-2.529s-0.022-0.563 0.161-0.746c0.165-0.165 0.365-0.426 0.548-0.639s0.244-0.365 0.365-0.609c0.122-0.244 0.061-0.457-0.030-0.639s-0.822-1.981-1.127-2.713c-0.296-0.713-0.598-0.617-0.822-0.628-0.213-0.011-0.457-0.013-0.7-0.013s-0.639 0.091-0.974 0.457c-0.335 0.365-1.279 1.248-1.279 3.043s1.31 3.532 1.492 3.776c0.183 0.244 2.58 3.936 6.251 5.522 0.873 0.378 1.555 0.604 2.086 0.773 0.878 0.279 1.677 0.24 2.308 0.145 0.704-0.105 2.159-0.883 2.464-1.735s0.305-1.584 0.213-1.735c-0.091-0.152-0.335-0.244-0.7-0.426z"/>
+        </svg>
+    </a>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Felyn Variety Stores | MAJ Variety Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
